@@ -20,8 +20,8 @@ public class TestcallableStatement {
 			CallableStatement cstmt=con.prepareCall("{call insertRecord(?,?)}");
 			cstmt.setInt(1, id);
 			cstmt.setString(2, name);
-			cstmt.execute();
-			System.out.println("Sucess...........");
+			int count = cstmt.executeUpdate();
+			System.out.println("Sucess..........."+count);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
